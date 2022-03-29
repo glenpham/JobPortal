@@ -25,6 +25,7 @@ foreach($array_result as $value){?>
  <td><?php echo $value['status'];?></td>
  <td><?php echo $value['createdDate'];?></td>
  <td><a href="edit.php/<?php echo $value['id'];?>">Edit</a> | <a class="delete-anchor-nn" data-id = "<?php echo $value['id'];?>" href="#">Delete</a></td>
+ <td><a href="../DashboardJobActivity/jobActivity.php/<?php echo $value['id'];?>">| Applicants</a></td>
 </tr>
 
 <?php } 

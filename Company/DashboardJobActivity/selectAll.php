@@ -4,7 +4,8 @@ $array_result = SelectAll();
 
 function SelectAll(){
     $array_result = array();
-    $companyID = $_SESSION['companyID'];
+    //$companyID = $_SESSION['companyID'];
+    $jobID =  basename($_SERVER["PHP_SELF"]);
 
     $servername = "localhost";
     $username = "root";
@@ -16,7 +17,7 @@ function SelectAll(){
         die("Failed! ". $conn->connect_error);
     }
 
-    $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where companyID = $companyID";
+    $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where postingposition.ID = $jobID";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         $array_result = $result->fetch_all(MYSQLI_ASSOC); 

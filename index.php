@@ -84,7 +84,7 @@ function test_input($data) {
 
 function SelectAvailableJob(){
     $array_result = array();
-    include_once 'database.php';
+    include 'database.php';
     $sql = "select * from postingposition INNER JOIN companyaccount on companyaccount.id = postingposition.companyID where status='active' or status='hold'";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
