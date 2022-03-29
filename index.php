@@ -110,7 +110,7 @@ function SelectAvailableJob(){
   </head>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">JOB PORTAL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -138,9 +138,9 @@ function SelectAvailableJob(){
         </li>
       </ul>
   </div>
-</nav>
+</nav> -->
 
-<nav class="navbar navbar-light bg-light">
+<!-- <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
   <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <label for="email">Email:</label>
@@ -153,36 +153,39 @@ function SelectAvailableJob(){
         <button type="submit">Submit</button>
     </form>
   </div>
-</nav>
+</nav> -->
 
 
-<div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape"/>
+    <div class="login">
+      <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <div class="messageErr"><?php echo $inputErr;?></div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value = "<?php echo $email; ?>">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value = "<?php echo $password; ?>">
+        <button type="submit">Submit</button>
+      </form>
     </div>
-    <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="Camera"/>
+
+    <div class="navbar">
+      <a class="active">JOB PORTAL</a>
+      <a href="#">Find jobs</a>
+      <a href="Candidate/signup.php" class="right">Candidate Sign up</a>
+      <a href="Company/register.php" class="right">Employee Sign up</a>
     </div>
-    <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="Exotic Fruits"/>
+
+
+
+    <div class="searchJob">
+
     </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-  <table id="customers">
-          <?php include 'includeTable.php' ; ?>
-      </table>
+    <table id="customers">
+      <?php include 'includeTable.php' ; ?>
+    </table>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
   </body>
 </html>
