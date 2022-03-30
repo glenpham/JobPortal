@@ -1,5 +1,6 @@
 <?php
 session_start();
+//$candidateID = $_SESSION['candidateID'];
 $email = $password = '';
 $inputErr = '';
 $is_error = false;
@@ -89,7 +90,7 @@ function test_input($data) {
 function SelectAvailableJob(){
     $array_result = array();
     include '../database.php';
-    $sql = "select * from postingposition INNER JOIN companyaccount on companyaccount.id = postingposition.companyID where status='active' or status='hold'";
+    $sql = "select postingposition.*, companyaccount.companyName from postingposition INNER JOIN companyaccount on companyaccount.id = postingposition.companyID where status='active' or status='hold'";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         $array_result = $result->fetch_all(MYSQLI_ASSOC); 
