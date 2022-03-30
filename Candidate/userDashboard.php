@@ -5,58 +5,7 @@ session_start();
 require 'selectAll.php';
 $array_result = SelectAll();
 
-/*
-if(isset($_SESSION['id'])){
-    include_once 'navbar.php';
-    insertValue();
-}
-else{
-    echo 'Error with issset';
-}
 
-
-function insertValue(){
-    //$array_result = array();
-
-    include 'db.php';
-
-    if($conn ->connect_error){
-        die("Failed! ". $conn->connect_error);
-    }
-    // echo $encryption;
-    // exit;
-    $sql = "SELECT * FROM candidate WHERE email = '$_SESSION[email]'";    
-   
-    $result = $conn->query($sql);
-
-    while($row = mysqli_fetch_assoc($result)) {
-        $id = $row['user_id'];
-        $firstName = $row['firstname'];
-        $lastName = $row['lastname'];
-        $address = $row['address'];
-        $mobile = $row['mobile'];
-        $email = $row['email'];
-        echo '<tr>
-        <th scope="row"> '.$id.' </th>
-        <td> ' .$firstName. ' </td>
-        <td> ' .$lastName. ' </td>
-        <td> ' .$address. ' </td>
-        <td> ' .$mobile. ' </td>
-        <td> ' .$email. ' </td>
-        <td> ' .$firstName. ' </td>
-        <td>
-        <button class="btn btn-primary"><a href="" class="text-light">Update</a></button>
-        <button class="btn btn-danger"><a href="" class="text-light">Delete</a></button>
-        </td>
-        </tr>';
-        
-        
-    }
-
-    $conn->close();
-
-}
-*/
 ?>
 
 

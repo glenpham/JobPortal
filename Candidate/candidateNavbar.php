@@ -1,3 +1,9 @@
+<?php
+
+//print_r($_SESSION);
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,10 +17,10 @@
 
   <div class="navbar">
       <a class="active">JOB PORTAL</a>
-      <a href="../index.php">Find jobs</a>
+      <a href="../Candidate/jobs.php">Find jobs</a>
       <a href="#" class="right">Logout</a>
-      <a href="#" class="right">My Account</a>
-    </div>
+      <a href="userDashboard.php" class="right">My Account</a>
+  </div>
 
 </body>
 </html>
