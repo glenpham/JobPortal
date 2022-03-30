@@ -77,7 +77,7 @@
     }
 
     function insertValue(){
-        include 'db.php';
+        include '../database.php';
         //print_r($_POST);
 
         if($conn ->connect_error){
@@ -115,7 +115,7 @@
     </head>
     <body>
 
-        <?php include_once 'navbar.php'; ?>
+        <?php include_once 'candidateNavbar.php'; ?>
 
         <div class="container">
             <div class="maindiv">

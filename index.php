@@ -41,8 +41,9 @@ function loginAccount(){
 
     $sqlcompanyaccount = "select * from companyaccount where email = '$_POST[email]'"; 
     $resultCompany = $conn->query($sqlcompanyaccount); 
-    // $sqlCandidateTable = "select * from candidateTable where email = '$_POST[email]'"; 
-    // $resultCandidate = $conn->query($sqlCandidateTable);   
+
+    $sqlCandidateAccount = "select * from candidate where email = '$_POST[email]'"; 
+    $resultCandidate = $conn->query($sqlCandidateAccount);   
 
     if ($resultCompany->num_rows >0){
       $row = $resultCompany->fetch_assoc();
@@ -56,18 +57,21 @@ function loginAccount(){
       else{
         $inputErr = "Log in or password invalid";
       }
-    } 
-    // elseif ($resultCandidate->num_rows >0){
-    //         $row = $resultCandidate->fetch_assoc();
-    //         $decryption=openssl_decrypt ($row['password'], $ciphering, $decryption_key, $options, $decryption_iv);
+    }
+    elseif ($resultCandidate->num_rows >0){
+      $row = $resultCandidate->fetch_assoc();
+      $decryption=openssl_decrypt ($row['password'], $ciphering, $decryption_key, $options, $decryption_iv);
 
-    //         if($_POST['password'] == $decryption){
-    //             $user = $row['email'];
-    //         }
-    //         else{
-    //           $inputErr = "Log in or password invalid";
-    //         }
-    //     }
+      if($_POST['password'] == $decryption){
+        $_SESSION["candidateID"] = $row['user_id'];
+        $_SESSION["email"] = $row['email'];
+        header("Location:Candidate/userDashboard.php");
+        die();
+      }
+      else{
+        $inputErr = "Log in or password invalid";
+      }
+    }
     else{
       $inputErr = "Log in or password invalid";
     }
