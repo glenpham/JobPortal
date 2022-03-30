@@ -21,5 +21,7 @@ $array_result = SelectAll();
         <?php include 'includeTable.php' ; ?>
     </table>
 
+    <?php include '../footer.php' ; ?>
+    
 </body>
 </html>

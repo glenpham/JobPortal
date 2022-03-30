@@ -92,3 +92,18 @@ body{
 .contentTable {
   height: 1000px;
 }
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #333;
+  float: left;
+  width: 100%;
+  color: white;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

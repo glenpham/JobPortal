@@ -146,5 +146,8 @@ function test_input($data) {
         <div class="col-6"></div>
         </div>
     </div>
+
+    <?php include '../footer.php' ; ?>
+
 </body>
 </html>

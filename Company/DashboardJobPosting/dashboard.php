@@ -36,5 +36,7 @@ $array_result = SelectAll();
     </table>
     </div>
 
+    <?php include '../footer.php' ; ?>
+    
 </body>
 </html>

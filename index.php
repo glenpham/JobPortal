@@ -154,27 +154,28 @@ function SelectAvailableJob(){
     </table>
     </div>
 
-    <div class="footer">
+    <?php include 'footer.php' ; ?>
+
+    <!-- <div class="footer">
       <ul class="no-bullets">
         <li><b>Job Portal</b></li>
-        <li>Home</li>
-        <li>Find jobs</li>
+        <li><a href="/JobPortal">Home</a></li>
       </ul>
         </div>
         <div class="footer">
       <ul class="no-bullets">
         <li><b>Candidate</b></li>
-        <li>Register Form</li>
-        <li>My Portal</li>
+        <li><a href="/JobPortal/Candidate/signup.php">Register Form</a></li>
+        <li><a href="/JobPortal/Candidate/userDashboard.php">My Portal</a></li>
       </ul>
         </div>
         <div class="footer">
       <ul class="no-bullets">
-        <li><b>Employee</b></li>
-        <li>Register Form</li>
-        <li>My Portal</li>
+        <li><b>Employer</b></li>
+        <li><a href="/JobPortal/Company/register.php">Register Form</a></li>
+        <li><a href="/JobPortal/Company/DashboardJobPosting/dashboard.php">My Portal</a></li>
       </ul>
-    </div>
+    </div> -->
 
   <script>
     let slideIndex = 1;
