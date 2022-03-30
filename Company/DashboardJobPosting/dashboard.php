@@ -21,8 +21,14 @@ $array_result = SelectAll();
           <a>View Job Activity</a>
     </div>
 
-    <input type="text" name="search" id="search-id-nn" value="">
-    <input type="button" value="Show Result" class="submit-search-btn">
+    <div>
+        <h1>Job Activity</h1>
+    </div>
+
+    <div class="search">
+        <input type="text" name="search" id="search-id-nn" value="">
+        <input type="button" value="Show Result" class="submit-search-btn">
+    </div>
 
     <div class="contentTable">
     <table id="myTable">

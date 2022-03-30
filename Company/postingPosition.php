@@ -91,6 +91,18 @@ function test_input($data) {
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+
+    <div class="navbar">
+          <a class="active">JOB PORTAL</a>
+          <a>Job Posting</a>
+          <a href="DashboardJobPosting/dashboard.php">View Job Activity</a>
+    </div>
+
+    <div>
+        <h1>Post Job</h1>
+    </div>
+
     <div class="container">
         <div class="maindiv">
         <div class="col-6">
