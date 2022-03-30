@@ -144,7 +144,7 @@ function SelectAvailableJob(){
     </div>
 
     <div class="searchJob">
-      <p>All available jobs</p>
+      <h4>All available jobs</h4>
     </div>
 
     <div class="contentTable">
