@@ -35,7 +35,7 @@ foreach($array_result as $value){?>
 <?php } 
 }
 else{ ?>
-  <p>NO RECORD FOUND</p>
+    <p>NO RECORD FOUND</p>
 <?php }?>
 
 <script src="companyAccount.js"></script>

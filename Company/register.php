@@ -28,10 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $is_error = true;
     } else {
       $companyName = test_input($_POST["companyName"]);
-      if (!preg_match("/^[a-zA-Z-' ]*$/",$companyName)) {
-        $companyNameErr = "Invalid name format";
-        $is_error = true;
-      }
     }
       
     if (empty($_POST["description"])) {
@@ -55,10 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $address = "";
       } else {
         $address = test_input($_POST["address"]);
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$address)) {
-          $addressErr = "Invalid format";      
-          $is_error = true;
-        }
       }
 
       if (empty($_POST["city"])) {
@@ -161,6 +153,7 @@ function test_input($data) {
     <div class="container">
       <h1>Sign-up as an Employer</h1>
       <h3>Find candidates!</h3>
+      <h4>Already sign up? Go back to <a href="/JobPortal">Home Page</a></h4>
 
       <p><span class="error-msg">* required field</span></p>
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

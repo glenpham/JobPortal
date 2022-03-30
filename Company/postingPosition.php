@@ -10,10 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $is_error = true;
     } else {
         $jobTitle = test_input($_POST["jobTitle"]);
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$jobTitle)) {
-          $jobTitleErr = "Invalid name format";
-          $is_error = true;
-        }
     }
 
     if (empty($_POST["jobType"])) {
@@ -53,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($is_error == false) {
         InsertValue();
+        $jobTitle = $jobType = $jobLocation = $jobDescription = $salary = $benefits = $status ='';
     }
 }
 
@@ -63,10 +60,12 @@ function InsertValue(){
     $sql = "insert into postingPosition (companyID, jobTitle, jobType, jobLocation, jobDescription, salary, benefits, status, createdDate) 
         values($companyID, '$_POST[jobTitle]', '$_POST[jobType]','$_POST[jobLocation]','$_POST[jobDescription]','$_POST[salary]','$_POST[benefits]','$_POST[status]', CURDATE())";    
     if($conn->query($sql)=== true){
-        echo 'Job Posted';
+        $message='Job Post!';
+        echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
     }
     else{
-        echo 'Error. Please try again.';
+        $message='Error. Please try again.';
+        echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
     }
     $conn->close();
 }
@@ -77,7 +76,6 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
 ?>
 
 
@@ -88,7 +86,7 @@ function test_input($data) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create an account</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/JobPortal/index.css">
 </head>
 <body>
 
