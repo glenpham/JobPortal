@@ -45,6 +45,7 @@ function loginAccount(){
     $sqlCandidateAccount = "select * from candidate where email = '$_POST[email]'"; 
     $resultCandidate = $conn->query($sqlCandidateAccount);   
 
+    // Login for Company
     if ($resultCompany->num_rows >0){
       $row = $resultCompany->fetch_assoc();
       $decryption=openssl_decrypt ($row['password'], $ciphering, $decryption_key, $options, $decryption_iv);
@@ -58,6 +59,7 @@ function loginAccount(){
         $inputErr = "Log in or password invalid";
       }
     }
+    // Login for Candidate
     elseif ($resultCandidate->num_rows >0){
       $row = $resultCandidate->fetch_assoc();
       $decryption=openssl_decrypt ($row['password'], $ciphering, $decryption_key, $options, $decryption_iv);
@@ -89,7 +91,7 @@ function test_input($data) {
 function SelectAvailableJob(){
     $array_result = array();
     include 'database.php';
-    $sql = "select * from postingposition INNER JOIN companyaccount on companyaccount.id = postingposition.companyID where status='active' or status='hold'";
+    $sql = "select postingposition.*, companyaccount.companyName from postingposition INNER JOIN companyaccount on companyaccount.id = postingposition.companyID where status='active' or status='hold'";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         $array_result = $result->fetch_all(MYSQLI_ASSOC); 
