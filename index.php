@@ -127,7 +127,7 @@ function SelectAvailableJob(){
 
     <div class="navbar">
       <a class="active">JOB PORTAL</a>
-      <a href="#">Find jobs</a>
+      <a href='#'>Find jobs</a>
       <a href="Candidate/signup.php" class="right">Candidate Sign up</a>
       <a href="Company/register.php" class="right">Employee Sign up</a>
     </div>
