@@ -21,12 +21,11 @@ function Select_Result(){
     if($result->num_rows >0){
         $array_result = $result->fetch_all(MYSQLI_ASSOC); 
         $html = include 'includeTable.php';
-        return $html;
     }
     else{
         echo $conn->connect_error;
         }
-        $conn->close();
-        return $array_result;
+    $conn->close();
+    return $html;
 } 
 ?>
