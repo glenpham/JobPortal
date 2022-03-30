@@ -11,6 +11,7 @@
  <th>Benefits</th>
  <th>Status</th>
  <th>Created Date</th>
+ <th>Apply</th>
 </tr>
 
 <?php 

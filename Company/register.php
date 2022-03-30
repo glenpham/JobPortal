@@ -92,11 +92,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 
     if ($is_error == false) {
-        InsertValue();
+      $emailErr = InsertValue();
+      if ($emailErr == ""){
+        $email = $password = $companyName = $description = $website = $address = $city = $province = $country ='';
+      }
     }
 }
 
 function InsertValue(){
+    $emailErr = "";
     include_once '../database.php';
 
     $ciphering = "AES-128-CTR";
@@ -116,14 +120,16 @@ function InsertValue(){
     else{
         $sql = "insert into companyAccount (email, password, companyName, description, website, address, city, province, country) values('$_POST[email]', '$encryption','$_POST[companyName]','$_POST[description]','$_POST[website]','$_POST[address]','$_POST[city]','$_POST[province]','$_POST[country]')";    
         if($conn->query($sql)=== true){
-            echo 'Account Created';
-            // $email = $password = '';
+            $message='Account Created';
+            echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
         }
         else{
-            echo 'Error. Please try again.';
+          $message='Error. Please try again';
+          echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
         }
     }
     $conn->close();
+    return $emailErr;
 }
 
 function test_input($data) {
@@ -132,9 +138,7 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -146,6 +150,14 @@ function test_input($data) {
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+    <div class="navbar">
+          <a class="active">JOB PORTAL</a>
+          <a href="../">Find jobs</a>
+          <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
+          <a class="right">Employee Sign up</a>
+    </div>
+
     <div class="container">
         <div class="maindiv">
         <div class="col-6">
@@ -187,7 +199,6 @@ function test_input($data) {
                 <label for="country">Country</label>
                 <input type="text" class ="input-div-nn" id="country" name="country" value = "<?php echo $country; ?>">
                 <p class = "error-msg"><?php echo $countryErr;?></p>
-                <a href="/JA-project/index.php" class="href">Log in</a>
 
                 <input type="submit" class="submit" value="Create an account">
             </form>

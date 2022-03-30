@@ -147,13 +147,33 @@ function SelectAvailableJob(){
       <p>All available jobs</p>
     </div>
 
+    <div class="contentTable">
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by job title">
     <table id="myTable">
       <?php include 'includeTable.php' ; ?>
     </table>
+    </div>
 
     <div class="footer">
-      <h2>Footer</h2>
+      <ul class="no-bullets">
+        <li><b>Job Portal</b></li>
+        <li>Home</li>
+        <li>Find jobs</li>
+      </ul>
+        </div>
+        <div class="footer">
+      <ul class="no-bullets">
+        <li><b>Candidate</b></li>
+        <li>Register Form</li>
+        <li>My Portal</li>
+      </ul>
+        </div>
+        <div class="footer">
+      <ul class="no-bullets">
+        <li><b>Employee</b></li>
+        <li>Register Form</li>
+        <li>My Portal</li>
+      </ul>
     </div>
 
   <script>
