@@ -14,6 +14,9 @@ $array_result = SelectAll();
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+
+    <?php include '../navbarEmployer.php' ; ?>
+
     <input type="text" name="search" id="search-id-nn" value="">
     <input type="button" value="Show Result" class="submit-search-btn">
 

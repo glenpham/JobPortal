@@ -146,8 +146,8 @@ function test_input($data) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an account</title>
-  <link rel="stylesheet" href="index.css">
+    <title>Employer Sign-up</title>
+  <link rel="stylesheet" href="../index.css">
 </head>
 <body>
 
@@ -159,53 +159,50 @@ function test_input($data) {
     </div>
 
     <div class="container">
-        <div class="maindiv">
-        <div class="col-6">
+      <h1>Sign-up as an Employer</h1>
+      <h3>Find candidates!</h3>
 
-            <p><span class="error-msg">* required field</span></p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                <label for="email">Email<span class = "error-msg" >*<span></label>
-                <input type="email" class ="input-div-nn" id="email" name = "email" value = "<?php echo $email; ?>">
-                <p class = "error-msg"><?php echo $emailErr;?></p>
+      <p><span class="error-msg">* required field</span></p>
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+          <label for="email">Email<span class = "error-msg" >*<span></label>
+          <input type="email" class ="input-div-nn" id="email" name = "email" value = "<?php echo $email; ?>">
+          <p class = "error-msg"><?php echo $emailErr;?></p>
 
-                <label for="password">Password<span class = "error-msg" >*</label>
-                <input type="password" class ="input-div-nn" id="password" name="password" value = "<?php echo $password; ?>">
-                <p class = "error-msg"><?php echo $passwordErr;?></p>
+          <label for="password">Password<span class = "error-msg" >*</label>
+          <input type="password" class ="input-div-nn" id="password" name="password" value = "<?php echo $password; ?>">
+          <p class = "error-msg"><?php echo $passwordErr;?></p>
 
-                <label for="companyName">Company Name<span class = "error-msg" >*</label>
-                <input type="text" class ="input-div-nn" id="companyName" name="companyName" value = "<?php echo $companyName; ?>">
-                <p class = "error-msg"><?php echo $companyNameErr;?></p>
+          <label for="companyName">Company Name<span class = "error-msg" >*</label>
+          <input type="text" class ="input-div-nn" id="companyName" name="companyName" value = "<?php echo $companyName; ?>">
+          <p class = "error-msg"><?php echo $companyNameErr;?></p>
 
-                <label for="description">Description<span class = "error-msg" >*</label>
-                <textarea class ="input-div-nn" id="description" name="description" rows="5" cols="40"><?php echo $description;?></textarea>
-                <p class = "error-msg"><?php echo $descriptionErr;?></p>
+          <label for="description">Description<span class = "error-msg" >*</label>
+          <textarea class ="input-div-nn" id="description" name="description" rows="5" cols="40"><?php echo $description;?></textarea>
+          <p class = "error-msg"><?php echo $descriptionErr;?></p>
 
-                <label for="website">Website</label>
-                <input type="text" class ="input-div-nn" id="website" name="website" value = "<?php echo $website; ?>">
-                <p class = "error-msg"><?php echo $websiteErr;?></p>
+          <label for="website">Website</label>
+          <input type="text" class ="input-div-nn" id="website" name="website" value = "<?php echo $website; ?>">
+          <p class = "error-msg"><?php echo $websiteErr;?></p>
 
-                <label for="address">Address</label>
-                <input type="text" class ="input-div-nn" id="address" name="address" value = "<?php echo $address; ?>">
-                <p class = "error-msg"><?php echo $addressErr;?></p>
+          <label for="address">Address</label>
+          <input type="text" class ="input-div-nn" id="address" name="address" value = "<?php echo $address; ?>">
+          <p class = "error-msg"><?php echo $addressErr;?></p>
 
-                <label for="city">City</label>
-                <input type="text" class ="input-div-nn" id="city" name="city" value = "<?php echo $city; ?>">
-                <p class = "error-msg"><?php echo $cityErr;?></p>
+          <label for="city">City</label>
+          <input type="text" class ="input-div-nn" id="city" name="city" value = "<?php echo $city; ?>">
+          <p class = "error-msg"><?php echo $cityErr;?></p>
 
-                <label for="province">Province</label>
-                <input type="text" class ="input-div-nn" id="province" name="province" value = "<?php echo $province; ?>">
-                <p class = "error-msg"><?php echo $provinceErr;?></p>
+          <label for="province">Province</label>
+          <input type="text" class ="input-div-nn" id="province" name="province" value = "<?php echo $province; ?>">
+          <p class = "error-msg"><?php echo $provinceErr;?></p>
 
-                <label for="country">Country</label>
-                <input type="text" class ="input-div-nn" id="country" name="country" value = "<?php echo $country; ?>">
-                <p class = "error-msg"><?php echo $countryErr;?></p>
+          <label for="country">Country</label>
+          <input type="text" class ="input-div-nn" id="country" name="country" value = "<?php echo $country; ?>">
+          <p class = "error-msg"><?php echo $countryErr;?></p>
 
-                <input type="submit" class="submit" value="Create an account">
-            </form>
-        </div>
-        <div class="col-6"></div>
-        </div>
-    </div>
+          <input type="submit" class="submit" value="Create my account">
+      </form>
+</div>
 
     <?php include '../footer.php' ; ?>
     

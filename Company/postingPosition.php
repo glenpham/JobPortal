@@ -92,59 +92,46 @@ function test_input($data) {
 </head>
 <body>
 
-
-    <div class="navbar">
-          <a class="active">JOB PORTAL</a>
-          <a>Job Posting</a>
-          <a href="DashboardJobPosting/dashboard.php">View Job Activity</a>
-    </div>
-
-    <div>
-        <h1>Post Job</h1>
-    </div>
+    <?php include 'navbarEmployer.php' ; ?>
 
     <div class="container">
-        <div class="maindiv">
-        <div class="col-6">
+        <h1>Post Job</h1>
 
-            <p><span class="error-msg">* required field</span></p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                <label for="jobTitle">Title<span class = "error-msg" >*<span></label>
-                <input type="text" class ="input-div-nn" id="jobTitle" name = "jobTitle" value = "<?php echo $jobTitle; ?>">
-                <p class = "error-msg"><?php echo $jobTitleErr;?></p>
+        <p><span class="error-msg">* required field</span></p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <label for="jobTitle">Title<span class = "error-msg" >*<span></label>
+            <input type="text" class ="input-div-nn" id="jobTitle" name = "jobTitle" value = "<?php echo $jobTitle; ?>">
+            <p class = "error-msg"><?php echo $jobTitleErr;?></p>
 
-                <label for="jobType">Type (Full-Time, Part-Time, Permanent,...)<span class = "error-msg" >*</label>
-                <input type="text" class ="input-div-nn" id="jobType" name="jobType" value = "<?php echo $jobType; ?>">
-                <p class = "error-msg"><?php echo $jobTypeErr;?></p>
+            <label for="jobType">Type (Full-Time, Part-Time, Permanent,...)<span class = "error-msg" >*</label>
+            <input type="text" class ="input-div-nn" id="jobType" name="jobType" value = "<?php echo $jobType; ?>">
+            <p class = "error-msg"><?php echo $jobTypeErr;?></p>
 
-                <label for="jobLocation">Job Location<span class = "error-msg" >*</label>
-                <input type="text" class ="input-div-nn" id="jobLocation" name="jobLocation" value = "<?php echo $jobLocation; ?>">
-                <p class = "error-msg"><?php echo $jobLocationErr;?></p>
+            <label for="jobLocation">Job Location<span class = "error-msg" >*</label>
+            <input type="text" class ="input-div-nn" id="jobLocation" name="jobLocation" value = "<?php echo $jobLocation; ?>">
+            <p class = "error-msg"><?php echo $jobLocationErr;?></p>
 
-                <label for="jobDescription">Description<span class = "error-msg" >*</label>
-                <textarea class ="input-div-nn" id="jobDescription" name="jobDescription" rows="5" cols="40"><?php echo $jobDescription;?></textarea>
-                <p class = "error-msg"><?php echo $jobDescriptionErr;?></p>
+            <label for="jobDescription">Description<span class = "error-msg" >*</label>
+            <textarea class ="input-div-nn" id="jobDescription" name="jobDescription" rows="5" cols="40"><?php echo $jobDescription;?></textarea>
+            <p class = "error-msg"><?php echo $jobDescriptionErr;?></p>
 
-                <label for="salary">Salary</label>
-                <input type="text" class ="input-div-nn" id="salary" name="salary" value = "<?php echo $salary; ?>">
-                <p class = "error-msg"><?php echo $salaryErr;?></p>
+            <label for="salary">Salary</label>
+            <input type="text" class ="input-div-nn" id="salary" name="salary" value = "<?php echo $salary; ?>">
+            <p class = "error-msg"><?php echo $salaryErr;?></p>
 
-                <label for="benefits">Benefits Available</label>
-                <textarea class ="input-div-nn" id="benefits" name="benefits" rows="5" cols="40"><?php echo $benefits;?></textarea>
-                <p class = "error-msg"><?php echo $benefitsErr;?></p>
+            <label for="benefits">Benefits Available</label>
+            <textarea class ="input-div-nn" id="benefits" name="benefits" rows="5" cols="40"><?php echo $benefits;?></textarea>
+            <p class = "error-msg"><?php echo $benefitsErr;?></p>
 
-                Status :
-                    <input type="radio" name="status" <?php if (isset($status) && $status=="active") echo "checked";?> value="active" checked>Active
-                    <input type="radio" name="status" <?php if (isset($status) && $status=="closed") echo "checked";?> value="closed">Closed
-                    <input type="radio" name="status" <?php if (isset($status) && $status=="hold") echo "checked";?> value="hold">Hold  
-                    <span class="error-msg">*</span>
-                    <p class = "error-msg"><?php echo $statusErr;?></p>
+            Status :
+                <input type="radio" name="status" <?php if (isset($status) && $status=="active") echo "checked";?> value="active" checked>Active
+                <input type="radio" name="status" <?php if (isset($status) && $status=="closed") echo "checked";?> value="closed">Closed
+                <input type="radio" name="status" <?php if (isset($status) && $status=="hold") echo "checked";?> value="hold">Hold  
+                <span class="error-msg">*</span>
+                <p class = "error-msg"><?php echo $statusErr;?></p>
 
-                <input type="submit" class="submit" value="Submit!">
-            </form>
-        </div>
-        <div class="col-6"></div>
-        </div>
+            <input type="submit" class="submit" value="Submit!">
+        </form>
     </div>
 
     <?php include '../footer.php' ; ?>

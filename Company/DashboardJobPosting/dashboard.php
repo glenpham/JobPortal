@@ -15,25 +15,18 @@ $array_result = SelectAll();
 </head>
 <body>
 
-    <div class="navbar">
-          <a class="active">JOB PORTAL</a>
-          <a href="../postingPosition.php">Job Posting</a>
-          <a>View Job Activity</a>
-    </div>
+    <?php include '../navbarEmployer.php' ; ?>
 
-    <div>
+    <div class="container">
         <h1>Job Activity</h1>
-    </div>
-
-    <div class="search">
         <input type="text" name="search" id="search-id-nn" value="">
         <input type="button" value="Show Result" class="submit-search-btn">
     </div>
 
     <div class="contentTable">
-    <table id="myTable">
-        <?php include 'includeTable.php' ; ?>
-    </table>
+        <table id="myTable">
+            <?php include 'includeTable.php' ; ?>
+        </table>
     </div>
 
     <?php include '../footer.php' ; ?>

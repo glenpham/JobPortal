@@ -121,7 +121,7 @@ function UpdateData($url_value){
 
 ?>
   
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -131,10 +131,8 @@ function UpdateData($url_value){
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <div class="maindiv">
-        <div class="col-6">
 
+    <div class="container">
             <p><span class="error-msg">* required field</span></p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="jobTitle">Title<span class = "error-msg" >*<span></label>
@@ -170,10 +168,8 @@ function UpdateData($url_value){
 
                 <input type="submit" class="submit" value="Submit!">
             </form>
-        </div>
-        <div class="col-6"></div>
-        </div>
     </div>
+    
 </body>
 </html>
 
