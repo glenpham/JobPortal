@@ -32,7 +32,7 @@ $array_result = SelectAvailableJob();
 
 function loginAccount(){
     $inputErr = "";
-    include_once '../database.php';
+    include_once 'database.php';
     $ciphering = "AES-128-CTR";
     $iv_length = openssl_cipher_iv_length($ciphering);
     $options = 0;
@@ -110,29 +110,90 @@ function SelectAvailableJob(){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../index.css">
-    <title>Hello, world!</title>
+    <title>Job Portal</title>
   </head>
   <body>
 
     <div class="navbar">
-      <a class="active">JOB PORTAL</a>
-      <a href="../Candidate/jobs.php">Find jobs</a>
-      <a href="../index.php" class="right">Logout</a>
-      <a href="userDashboard.php" class="right">My Account</a>
+        <a class="active">JOB PORTAL</a>
+        <a href="#">Find jobs</a>
+        <a href="../index.php" class="right">Logout</a>
+        <a href="userDashboard.php" class="right">My Account</a>
     </div>
 
-
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/2a.jpg" style="width:30%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/3a.png" style="width:30%">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
 
     <div class="searchJob">
-
+      <p>All available jobs</p>
     </div>
 
-    <table id="customers">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by job title">
+    <table id="myTable">
       <?php include '../includeTable.php' ; ?>
     </table>
 
     <div class="footer">
       <h2>Footer</h2>
     </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+  </script>
+
   </body>
 </html>
