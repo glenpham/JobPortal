@@ -10,6 +10,9 @@
  <th>Benefits</th>
  <th>Status</th>
  <th>Created Date</th>
+ <th>Edit</th>
+ <th>Delete</th>
+ <th>Applicants</th>
 </tr>
 
 <?php 
