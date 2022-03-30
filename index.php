@@ -133,10 +133,10 @@ function SelectAvailableJob(){
     </div>
 
     <div class="slideshow-container">
-      <div class="mySlides fade">
+      <div class="mySlides">
         <img src="images/2a.jpg" style="width:30%">
       </div>
-      <div class="mySlides fade">
+      <div class="mySlides">
         <img src="images/3a.png" style="width:30%">
       </div>
       <a class="prev" onclick="plusSlides(-1)">❮</a>
