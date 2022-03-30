@@ -110,55 +110,9 @@ function SelectAvailableJob(){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
-    <title>Hello, world!</title>
+    <title>Job Portal</title>
   </head>
   <body>
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">JOB PORTAL</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link" href="Company/register.php">Employee Sign up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Candidate/signup.php">Candidate Sign up</a>
-        </li>
-      </ul>
-  </div>
-</nav> -->
-
-<!-- <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-  <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value = "<?php echo $email; ?>">
-        <p class = "error-msg"><?php echo $inputErr;?></p>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" value = "<?php echo $password; ?>">
-        <p class = "error-msg"><?php echo $inputErr;?></p>
-        <button type="submit">Submit</button>
-    </form>
-  </div>
-</nav> -->
-
 
     <div class="login">
       <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
@@ -178,18 +132,79 @@ function SelectAvailableJob(){
       <a href="Company/register.php" class="right">Employee Sign up</a>
     </div>
 
-
-
-    <div class="searchJob">
-
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/2a.jpg" style="width:30%">
+      </div>
+      <div class="mySlides fade">
+        <img src="images/3a.png" style="width:30%">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
     </div>
 
-    <table id="customers">
+    <div class="searchJob">
+      <p>All available jobs</p>
+    </div>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by job title">
+    <table id="myTable">
       <?php include 'includeTable.php' ; ?>
     </table>
 
     <div class="footer">
       <h2>Footer</h2>
     </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+  </script>
+
   </body>
 </html>
