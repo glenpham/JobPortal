@@ -1,11 +1,16 @@
-table, th, td {
-  border: 1px solid black;
-}
-
   .footer {
     padding: 20px;
     text-align: center;
     background-color: #333;
+    float: left;
+    width: 100%;
+    color: white;
+  }
+
+  ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
   .navbar {
@@ -115,21 +120,26 @@ table, th, td {
 }
 
 #myInput {
-  background-image: url('/css/searchicon.png'); 
   background-position: 10px 12px;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 80%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+  margin-top: 30px;
+  margin-left: 10%;
+
 }
 
 #myTable {
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
   border: 1px solid #ddd;
   font-size: 18px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #myTable th, #myTable td {
@@ -143,4 +153,8 @@ table, th, td {
 
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
+}
+
+.contentTable {
+  height: 1000px;
 }
