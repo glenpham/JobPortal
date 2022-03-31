@@ -111,16 +111,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Sign Up</title>
-    <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../index.css">
     </head>
     <body>
 
         <?php include_once '../navbar.php'; ?>
 
         <div class="container">
-            <div class="maindiv">
-            <div class="col-6">
                 <h1 style="text-align: center;">Job Seeker</h1>
+                <h3 style="text-align: center;">Find the right job for you !</h3>
+                <h4 style="text-align: center;">Already sign up? Go back to <a href="/JobPortal">Home Page</a></h4>
                 <?php echo $error_log['success'];?>
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                     <label class="label" for="name">First Name</label>
@@ -140,20 +140,18 @@
                     <p class = "error-msg"><?php echo $error_log['mobile'];?></p>
 
                     <label class="label" for="email">Email</label>
-                    <input type="email" class ="input-div-nn" id="email" name="email" value = "<?php echo $email; ?>"                >
+                    <input type="email" class ="input-div-nn" id="email" name="email" value = "<?php echo $email; ?>">
                     <p class = "error-msg"><?php echo $error_log['email'];?></p>
 
                     <label class="label" for="mobile">Password</label>
                     <input type="password" class ="input-div-nn" id="password" name = "password"  value = "<?php echo $password; ?>">
                     <p class = "error-msg"><?php echo $error_log['password'];?></p>
 
-                    <a href="login.php" class="href">Already have an account? Login</a>
-
                     <input type="submit" class="submit" value="Register">
                 </form>
             </div>
-            <div class="col-6"></div>
-            </div>
         </div>
+
+        <?php include '../footer.php' ; ?>
     </body>
     </html>

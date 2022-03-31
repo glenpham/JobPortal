@@ -143,12 +143,7 @@ function test_input($data) {
 </head>
 <body>
 
-    <div class="navbar">
-          <a class="active">JOB PORTAL</a>
-          <a href="../">Find jobs</a>
-          <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
-          <a class="right">Employer Sign up</a>
-    </div>
+    <?php include_once '../navbar.php'; ?>
 
     <div class="container">
       <h1>Sign-up as an Employer</h1>

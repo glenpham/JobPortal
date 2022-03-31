@@ -86,6 +86,12 @@ $array_result = SelectAll();
                 <?php include 'includeTable.php' ; ?>
             </table> 
         </div>
+
+        <div>
+        <?php include '../footer.php' ; ?>
+        </div>
+        
+
     </body>
     <!---- Body End ---->
 </html>

@@ -12,7 +12,7 @@
   <div class="navbar">
       <a class="active">JOB PORTAL</a>
       <a href="../index.php">Find jobs</a>
-      <a href="#" class="right">Candidate Sign up</a>
+      <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
       <a href="../Company/register.php" class="right">Employer Sign up</a>
 </div>
 
