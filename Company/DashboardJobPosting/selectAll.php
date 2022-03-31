@@ -6,16 +6,8 @@ function SelectAll(){
     $array_result = array();
     $companyID = $_SESSION['companyID'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = ""; 
-    $dbname = "mydb";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    include '../../database.php';
     
-    if($conn ->connect_error){
-        die("Failed! ". $conn->connect_error);
-    }
-
     $sql = "select * from postingposition where companyID = $companyID";
     $result = $conn->query($sql);
     if($result->num_rows > 0){

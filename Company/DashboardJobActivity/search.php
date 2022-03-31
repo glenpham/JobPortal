@@ -6,15 +6,7 @@ function Select_Result(){
     $array_result = array();
     $companyID = $_SESSION['companyID'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = ""; 
-    $dbname = "mydb";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if($conn ->connect_error){
-        die("Failed! ". $conn->connect_error);
-    }
+    include '../../database.php';
 
     $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where (companyID = $companyID and postingID = $_POST[search_keyword])";
     $result = $conn->query($sql);

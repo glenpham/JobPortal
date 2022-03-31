@@ -7,15 +7,7 @@ function Select_Result(){
     $array_result = array();
     $companyID = $_SESSION['companyID'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = ""; 
-    $dbname = "mydb";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if($conn ->connect_error){
-        die("Failed! ". $conn->connect_error);
-    }
+    include '../../database.php';
 
     $sql = "Select * from postingposition where (id like '%$_POST[search_keyword]%' OR jobTitle like '%$_POST[search_keyword]%') and companyID = $companyID";   
     $result = $conn->query($sql);

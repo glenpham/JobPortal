@@ -6,13 +6,12 @@ function DeleteRecord (){
    $array_result = array();
    $job_id =  $_POST['job_id'];
    require 'selectAll.php';
-   echo "delete";
 
    include '../../database.php';
 
    $sql = "delete from postingposition where id = $job_id";
    if($conn->query($sql)){
-        $array_result = selectAll();
+        $array_result = SelectAll();
         $html = include 'includeTable.php';
     }
     else{

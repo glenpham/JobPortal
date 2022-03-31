@@ -7,15 +7,7 @@ function SelectAll(){
     //$companyID = $_SESSION['companyID'];
     $jobID =  basename($_SERVER["PHP_SELF"]);
 
-    $servername = "localhost";
-    $username = "root";
-    $password = ""; 
-    $dbname = "mydb";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    if($conn ->connect_error){
-        die("Failed! ". $conn->connect_error);
-    }
+    include '../../database.php';
 
     $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where postingposition.ID = $jobID";
     $result = $conn->query($sql);
