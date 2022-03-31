@@ -9,8 +9,8 @@ $(document).ready(function() {
             url: 'search.php',
             data: {search_keyword:search_keyword},
             success: function (response) {
-                $('#customers').html(''); 
-                $('#customers').html(response); 
+                $('#myTable').html(''); 
+                $('#myTable').html(response); 
             }
         });
     });
@@ -26,8 +26,8 @@ $(document).ready(function() {
                 url: 'accept.php',
                 data: {job_id:job_id},
                 success: function (response) {
-                    $('#customers').html(''); 
-                    $('#customers').html(response);
+                    $('#myTable').html(''); 
+                    $('#myTable').html(response);
                 }
             });
         }
@@ -45,8 +45,8 @@ $(document).ready(function() {
                 url: 'reject.php',
                 data: {job_id:job_id},
                 success: function (response) {
-                    $('#customers').html(''); 
-                    $('#customers').html(response);
+                    $('#myTable').html(''); 
+                    $('#myTable').html(response);
                 }
             });
         }
