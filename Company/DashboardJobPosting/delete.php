@@ -3,14 +3,14 @@
 DeleteRecord();
 
 function DeleteRecord (){
-    $array_result = array();
-    $job_id =  $_POST['job_id'];
-    require 'selectAll.php';
+   $array_result = array();
+   $job_id =  $_POST['job_id'];
+   require 'selectAll.php';
 
-    include '../../database.php';
+   include '../../database.php';
 
-    $sql = "delete from postingposition where id = $job_id";
-    if($conn->query($sql)){
+   $sql = "delete from postingposition where id = $job_id";
+   if($conn->query($sql)){
         $array_result = selectAll();
         $html = include 'includeTable.php';
     }
@@ -18,7 +18,7 @@ function DeleteRecord (){
         echo "error".$conn->connect_error;
     }
     $conn->close();
-    return $html;
+    return $html;    
 }
 
 ?>
