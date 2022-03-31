@@ -9,8 +9,8 @@
  <th>CV</th>
 </tr>
 
-<?php 
-foreach($array_result as $value){?>
+<?php foreach($array_result as $value){?>
+  
 <tr>
  <td><?php echo $value['postingID'];?></td>
  <td><?php echo $value['jobTitle'];?></td>
