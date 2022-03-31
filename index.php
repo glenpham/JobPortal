@@ -149,7 +149,7 @@ function SelectAvailableJob(){
       <h4>All available jobs</h4>
     </div>
 
-    <div class="contentTable">
+    <div>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by job title">
     <table id="myTable">
       <?php include 'includeTable.php' ; ?>

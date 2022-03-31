@@ -12,7 +12,7 @@
  <th>Created Date</th>
  <th>Edit</th>
  <th>Delete</th>
- <th>Applicants</th>
+ <!-- <th>Applicants</th> -->
 </tr>
 
 <?php 
@@ -29,7 +29,7 @@ foreach($array_result as $value){?>
  <td><?php echo $value['createdDate'];?></td>
  <td><a href="edit.php/<?php echo $value['id'];?>">Edit</a></td>
  <td><a class="delete-anchor-nn" data-id = "<?php echo $value['id'];?>" href="#">Delete</a></td>
- <td><a href="../DashboardJobActivity/jobActivity.php/<?php echo $value['id'];?>">Applicants</a></td>
+ <!-- <td><a href="../DashboardJobActivity/jobActivity.php">Applicants</a></td> -->
 </tr>
 
 <?php } 

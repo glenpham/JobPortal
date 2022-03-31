@@ -18,8 +18,8 @@ $array_result = SelectAll();
     <?php include '../navbarEmployer.php' ; ?>
 
     <div class="container">
-        <h1>Job Activity</h1>
-        <input type="text" name="search" id="search-id-nn" value="">
+        <h1>Jobs Posted</h1>
+        <input type="text" name="search" id="search-id-nn" value="" placeholder="Search by job title or by ID">
         <input type="button" value="Show Result" class="submit-search-btn">
     </div>
 

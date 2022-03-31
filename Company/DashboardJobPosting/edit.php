@@ -112,6 +112,8 @@ function UpdateData($url_value){
         where id=$url_value[5]";
 
     if($conn->query($sql)=== true){
+        $message='Job post updated!';
+        echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
     }
     else{
         echo "error".$conn->connect_error;
@@ -128,9 +130,11 @@ function UpdateData($url_value){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create an account</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/JobPortal/index.css">
 </head>
 <body>
+
+    <?php include '../navbarEmployer.php' ; ?>
 
     <div class="container">
             <p><span class="error-msg">* required field</span></p>
@@ -170,6 +174,8 @@ function UpdateData($url_value){
             </form>
     </div>
     
+    <?php include '../../footer.php' ; ?>
+
 </body>
 </html>
 
