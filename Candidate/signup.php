@@ -119,9 +119,9 @@
         <?php include_once '../navbar.php'; ?>
 
         <div class="container">
-                <h1 style="text-align: center;">Job Seeker</h1>
-                <h3 style="text-align: center;">Find the right job for you !</h3>
-                <h4 style="text-align: center;">Already sign up? Go back to <a href="/JobPortal">Home Page</a></h4>
+                <h1>Job Seeker</h1>
+                <h3>Find the right job for you !</h3>
+                <h4>Already sign up? Go back to <a href="/JobPortal">Home Page</a></h4>
                 <?php echo $error_log['success'];?>
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                     <label class="label" for="name">First Name</label>
