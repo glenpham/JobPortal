@@ -142,9 +142,7 @@ function SelectAvailableJob(){
       <?php include '../includeTable.php' ; ?>
     </table>
 
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
+    <?php include '../footer.php' ?>
 
   <script>
     let slideIndex = 1;

@@ -28,7 +28,8 @@ $array_result = SelectAll();
     <!---- Body Start ---->
     <body>
         <?php include 'candidateNavbar.php'; ?>
-        <table class="table">
+
+        <table class="table" style="text-align: center;">
             <thead>
                 <tr>
                 <th scope="col">First</th>
@@ -80,16 +81,14 @@ $array_result = SelectAll();
                 ?>
             </tbody>
         </table>
-        <div class="container">
-            Applied Jobs
-            <table id="customers">
-                <?php include 'includeTable.php' ; ?>
-            </table> 
-        </div>
 
-        <div>
+        <h4>Applied Jobs</h4> 
+        <table class="table">
+            <?php include 'includeTable.php' ; ?>
+        </table> 
+
         <?php include '../footer.php' ; ?>
-        </div>
+        
         
 
     </body>

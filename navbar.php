@@ -14,7 +14,7 @@
       <a href="../index.php">Find jobs</a>
       <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
       <a href="../Company/register.php" class="right">Employer Sign up</a>
-</div>
+  </div>
 
 </body>
 </html>
