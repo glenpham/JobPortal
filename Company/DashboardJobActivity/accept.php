@@ -18,8 +18,9 @@ function AcceptCandidate(){
    }
 
    $sql = "update jobpostactivity set companyStatus = 'accepte' where id = $job_id";
+   echo $job_id;
    if($conn->query($sql)){
-        $array_result = selectAll();
+        $array_result = SelectAll();
         $html = include 'includeTable.php';
         return $html;
     }

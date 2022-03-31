@@ -32,7 +32,6 @@ $(document).ready(function() {
             });
         }
     });
-
     
     $('.reject-nn').click(function(e){
         var job_id =  $(this).data('id')
@@ -51,5 +50,4 @@ $(document).ready(function() {
             });
         }
     });
-
 });
