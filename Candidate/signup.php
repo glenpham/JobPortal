@@ -3,6 +3,7 @@
     // Declare variables
     // If the submitted form isn't empty in any way and holds data,
     //  assign them to the decalred variables
+    session_start();
     $firstName = $lastName = $address = $mobile = $email = $password = $success = "";
     
     if(!empty($_POST)){

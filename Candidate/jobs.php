@@ -114,13 +114,7 @@ function SelectAvailableJob(){
     <title>Job Portal</title>
   </head>
   <body>
-
-    <div class="navbar">
-        <a class="active">JOB PORTAL</a>
-        <a href="#">Find jobs</a>
-        <a href="../index.php" class="right">Logout</a>
-        <a href="userDashboard.php" class="right">My Account</a>
-    </div>
+    <?php include '../navbar.php'; ?>
 
     <div class="slideshow-container">
       <div class="mySlides fade">

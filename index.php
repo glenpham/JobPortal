@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION['navbar'] = 'home';
+echo print_r($_SESSION);
 $email = $password = '';
 $inputErr = '';
 $is_error = false;
