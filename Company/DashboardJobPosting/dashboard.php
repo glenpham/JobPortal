@@ -30,6 +30,6 @@ $array_result = SelectAll();
     </div>
 
     <?php include '../../footer.php' ; ?>
-    
+
 </body>
 </html>
