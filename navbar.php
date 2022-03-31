@@ -21,7 +21,7 @@
       <a class="active">JOB PORTAL</a>
       <a href="../Candidate/jobs.php">Find jobs</a>
       <a href="userDashboard.php" class="right">My Account</a>
-      <a href="/JobPortal/index.php" class="right">Logout</a>
+      <a href="/JobPortal/logout.php" class="right">Logout</a>
     </div>
 <?php  
   }
@@ -32,7 +32,7 @@
       <a href="/JobPortal/Company/postingPosition.php">Job Posting</a>
       <a href="/JobPortal/Company/DashboardJobPosting/dashboard.php">View Jobs Posted</a>
       <a href="/JobPortal/Company/DashboardJobActivity/jobActivity.php">View Job Activity</a>
-      <a href="/JobPortal/index.php" class="right">Logout</a>
+      <a href="/JobPortal/logout.php" class="right">Logout</a>
     </div>
 <?php  
   }
