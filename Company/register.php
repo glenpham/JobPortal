@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $email = $password = $companyName = $description = $website = $address = $city = $province = $country ='';
 $emailErr = $passwordErr = $companyNameErr = $descriptionErr = $websiteErr = $addressErr = $cityErr = $provinceErr = $countryErr ='';
 $is_error = false;
@@ -139,16 +140,12 @@ function test_input($data) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employer Sign-up</title>
-  <link rel="stylesheet" href="../index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
 
-    <div class="navbar">
-          <a class="active">JOB PORTAL</a>
-          <a href="../">Find jobs</a>
-          <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
-          <a class="right">Employer Sign up</a>
-    </div>
+    <?php include_once '../navbar.php'; ?>
 
     <div class="container">
       <h1>Sign-up as an Employer</h1>

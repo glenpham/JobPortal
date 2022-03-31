@@ -1,11 +1,19 @@
+  body {
+    position: relative;
+    padding-bottom: 264px;
+    min-height: 100vh;
+  }
+
   .footer {
+    position: absolute;
+    bottom: 0;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
     background-color: #333;
     float: left;
     width: 100%;
-    color: white;
+    color: white; 
   }
 
   ul.no-bullets {

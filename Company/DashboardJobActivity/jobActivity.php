@@ -15,7 +15,7 @@ $array_result = SelectAll();
 </head>
 <body>
 
-    <?php include '../navbarEmployer.php' ; ?>
+    <?php include '../../navbar.php' ; ?>
 
     <div class="container">
         <h1>View Job Applicants</h1>

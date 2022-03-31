@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-//print_r($_SESSION);
+print_r($_SESSION);
 $candidateID = $_SESSION['candidateID'];
+$_SESSION['navbar'] = 'candidate';
 require 'selectAll.php';
 $array_result = SelectAll();
 
@@ -27,8 +28,9 @@ $array_result = SelectAll();
 
     <!---- Body Start ---->
     <body>
-        <?php include 'candidateNavbar.php'; ?>
-        <table class="table">
+        <?php include '../navbar.php'; ?>
+
+        <table class="table" style="text-align: center;">
             <thead>
                 <tr>
                 <th scope="col">First</th>
@@ -62,17 +64,17 @@ $array_result = SelectAll();
                         $email = $row['email'];
                         echo '<tr>
 
-                        <td> ' .$firstName. ' </td>
-                        <td> ' .$lastName. ' </td>
-                        <td> ' .$address. ' </td>
-                        <td> ' .$mobile. ' </td>
-                        <td> ' .$email. ' </td>
-                        <td>
-                            <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
-                            <button class="btn btn-secondary"><a href="#" class="text-light">Add Experience</a></button>
-                            <button class="btn btn-secondary"><a href="#" class="text-light">Add Education</a></button>
-                    
-                        </td>
+                            <td> ' .$firstName. ' </td>
+                            <td> ' .$lastName. ' </td>
+                            <td> ' .$address. ' </td>
+                            <td> ' .$mobile. ' </td>
+                            <td> ' .$email. ' </td>
+                            <td>
+                                <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
+                                <button class="btn btn-secondary"><a href="#" class="text-light">Add Experience</a></button>
+                                <button class="btn btn-secondary"><a href="#" class="text-light">Add Education</a></button>
+                        
+                            </td>
                         </tr>';
                     }
                 
@@ -80,12 +82,16 @@ $array_result = SelectAll();
                 ?>
             </tbody>
         </table>
-        <div class="container">
-            Applied Jobs
-            <table id="customers">
-                <?php include 'includeTable.php' ; ?>
-            </table> 
-        </div>
+
+        <h4>Applied Jobs</h4> 
+        <table class="table">
+            <?php include 'includeTable.php' ; ?>
+        </table> 
+
+        <?php include '../footer.php' ; ?>
+        
+        
+
     </body>
     <!---- Body End ---->
 </html>

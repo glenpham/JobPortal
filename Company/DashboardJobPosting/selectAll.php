@@ -1,5 +1,6 @@
 <?php 
 session_start();
+echo print_r($_SESSION,true);
 $array_result = SelectAll();
 
 function SelectAll(){
