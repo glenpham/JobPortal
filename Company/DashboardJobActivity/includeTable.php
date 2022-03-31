@@ -9,8 +9,8 @@
  <th>CV</th>
 </tr>
 
-<?php foreach($array_result as $value){?>
-  
+<?php 
+foreach($array_result as $value){?>
 <tr>
  <td><?php echo $value['postingID'];?></td>
  <td><?php echo $value['jobTitle'];?></td>
@@ -18,7 +18,8 @@
  <td><?php echo $value['appliedDate'];?></td>
  <td><?php echo $value['companyStatus'];?></td>
  <td><?php echo $value['cv'];?></td>
- <td><a class="accept-nn" data-id = "<?php echo $value['id'];?>" href="#">Accept</a> | <a class="reject-nn" data-id = "<?php echo $value['id'];?>" href="#">Reject</a></td>
+ <td><a class="accept-nn" data-id = "<?php echo $value['id'];?>" href="#">Accept</a></td> 
+ <td><a class="reject-nn" data-id = "<?php echo $value['id'];?>" href="#">Reject</a></td>
 </tr>
 
 <?php } 

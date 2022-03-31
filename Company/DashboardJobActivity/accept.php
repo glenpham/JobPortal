@@ -10,7 +10,6 @@ function AcceptCandidate(){
    include '../../database.php';
 
    $sql = "update jobpostactivity set companyStatus = 'accepte' where id = $job_id";
-   echo $job_id;
    if($conn->query($sql)){
         $array_result = SelectAll();
         $html = include 'includeTable.php';

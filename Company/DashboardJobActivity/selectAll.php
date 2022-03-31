@@ -4,8 +4,8 @@ $array_result = SelectAll();
 
 function SelectAll(){
     $array_result = array();
-    $companyID = $_SESSION['companyID'];
-    // $jobID =  basename($_SERVER["PHP_SELF"]);
+    // $companyID = $_SESSION['companyID'];
+    $jobID =  basename($_SERVER["PHP_SELF"]);
 
     include '../../database.php';
 
