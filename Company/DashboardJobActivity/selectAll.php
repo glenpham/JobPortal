@@ -1,11 +1,12 @@
 <?php 
 session_start();
+echo print_r($_SESSION,true);
 $array_result = SelectAll();
 
 function SelectAll(){
     $array_result = array();
     // $companyID = $_SESSION['companyID'];
-    $jobID =  basename($_SERVER["PHP_SELF"]);
+    $jobID =  $_GET['jobID'];
 
     include '../../database.php';
 
