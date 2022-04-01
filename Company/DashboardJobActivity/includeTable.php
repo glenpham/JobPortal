@@ -4,9 +4,12 @@
  <th>Job ID</th>
  <th>Job Title</th>
  <th>Applicant Fist Name</th>
+ <th>Applicant Last Name</th>
  <th>Applied Date</th>
  <th>Status</th>
  <th>CV</th>
+ <th>Accept</th>
+ <th>Reject</th>
 </tr>
 
 <?php 
@@ -14,7 +17,8 @@ foreach($array_result as $value){?>
 <tr>
  <td><?php echo $value['postingID'];?></td>
  <td><?php echo $value['jobTitle'];?></td>
- <td><?php echo $value['candidateID'];?></td>
+ <td><?php echo $value['firstname'];?></td>
+ <td><?php echo $value['lastname'];?></td>
  <td><?php echo $value['appliedDate'];?></td>
  <td><?php echo $value['companyStatus'];?></td>
  <td><?php echo $value['cv'];?></td>

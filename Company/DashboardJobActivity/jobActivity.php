@@ -19,7 +19,7 @@ $array_result = SelectAll();
 
     <div class="container">
         <h1>View Job Applicants</h1>
-        <input type="text" name="search" id="search-id-nn" value="">
+        <input type="text" name="search" id="search-id-nn" value="" placeholder="Search by job title or by ID">
         <input type="button" value="Show Result" class="submit-search-btn">
     </div>
 
