@@ -1,12 +1,12 @@
 <?php
 session_start();
-unset($_SESSION['companyID']);
-unset($_SESSION['candidateID']);
-unset($_SESSION['email']);
+// unset($_SESSION['companyID']);
+// unset($_SESSION['candidateID']);
+// unset($_SESSION['email']);
 $_SESSION['navbar'] = 'home';
-$_SESSION['companyID'] = NULL;
-$_SESSION['candidateID'] = NULL;
-$_SESSION['email'] = NULL;
+// $_SESSION['companyID'] = NULL;
+// $_SESSION['candidateID'] = NULL;
+// $_SESSION['email'] = NULL;
 echo print_r($_SESSION,true);
 $email = $password = '';
 $inputErr = '';
