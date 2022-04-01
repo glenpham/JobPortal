@@ -75,6 +75,7 @@ function loginAccount(){
       if($_POST['password'] == $decryption){
         $_SESSION["candidateID"] = $row['user_id'];
         $_SESSION["email"] = $row['email'];
+        $_SESSION['navbar'] = 'candidate';
         header("Location:Candidate/userDashboard.php");
         die();
       }

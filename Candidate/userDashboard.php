@@ -3,7 +3,6 @@
 session_start();
 print_r($_SESSION);
 $candidateID = $_SESSION['candidateID'];
-$_SESSION['navbar'] = 'candidate';
 require 'selectAll.php';
 $array_result = SelectAll();
 
