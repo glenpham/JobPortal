@@ -27,7 +27,9 @@ foreach($array_result as $value){?>
  <td><?php echo $value['benefits'];?></td>
  <td><?php echo $value['status'];?></td>
  <td><?php echo $value['createdDate'];?></td>
- <td><?php if ($value['status'] == 'active'){ ?><a href="Candidate/apply.php?jobID=<?php echo $value['id'];?>">Apply</a><?php }?></td>
+ <td><?php if (!isset($_SESSION['candidateID'])){echo"nope";} elseif
+   
+  ($value['status'] == 'active' && $_SESSION['candidateID'] != ''){ ?><a href="Candidate/apply.php?jobID=<?php echo $value['id'];?>">Apply</a><?php }?></td>
 </tr>
 
 <?php } 
