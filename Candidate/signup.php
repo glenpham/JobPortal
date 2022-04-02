@@ -99,21 +99,28 @@
             die("Failed! ". $conn->connect_error);
         }
 
-        $sql = "INSERT INTO candidate (firstname, lastname, address, mobile, email, education, experience, password) 
-                Values('$_POST[firstName]','$_POST[lastName]','$_POST[address]','$_POST[mobile]',
-                '$_POST[email]','$_POST[education]','$_POST[experience]','$_POST[password]')";
+        $isEmailAvailable = "select * from candidate where email = '$_POST[email]'";    
+        $result = $conn->query($isEmailAvailable);
+        if($result->num_rows > 0){
+            $error_log['success'] = '<p class="danger">Email alreay in use</p>';
+        }
+        else{
+            $sql = "INSERT INTO candidate (firstname, lastname, address, mobile, email, education, experience, password) 
+            Values('$_POST[firstName]','$_POST[lastName]','$_POST[address]','$_POST[mobile]',
+            '$_POST[email]','$_POST[education]','$_POST[experience]','$_POST[password]')";
 
-        //  echo $sql;
-        // exit;
-        // print_r($conn->query($sql));
-        // $sql = "insert into contactus (firstname, mobile,email,message) values ('abc','122323','test.fa.ca','test' )";
-        //print_r($sql);
+            //  echo $sql;
+            // exit;
+            // print_r($conn->query($sql));
+            // $sql = "insert into contactus (firstname, mobile,email,message) values ('abc','122323','test.fa.ca','test' )";
+            //print_r($sql);
 
-        $conn->query($sql);
+            $conn->query($sql);
 
-        include 'encrypt.php';
+            include 'encrypt.php';
+        }
+
         $conn->close();
-
     }
     
     ?>
