@@ -75,7 +75,7 @@ $array_result = SelectAll();
                             <td> ' .$education. ' </td>
                             <td> ' .$experience. ' </td>
                             <td>
-                                <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
+                                <button class="btn btn-primary"><a href="editCandidate.php/'.$id.'" class="text-light">Update</a></button>
                             </td>
                         </tr>';
                     }

@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $url_value = explode('/',$_SERVER['PHP_SELF']);
 
 if(!array_key_exists('5',$url_value)||$url_value[5] == '' ){
