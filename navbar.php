@@ -17,7 +17,7 @@
 
   <div class="navbar">
     <a class="active">JOB PORTAL</a>
-    <a href="/JobPortal">Find jobs</a>
+    <a href="/jobs.php">Find jobs</a>
     <a href="/JobPortal/Candidate/userDashboard.php" class="right">My Account</a>
     <a href="/JobPortal/logout.php" class="right">Logout</a>
   </div>

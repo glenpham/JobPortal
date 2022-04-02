@@ -17,7 +17,7 @@ function SelectAll(){
         die("Failed! ". $conn->connect_error);
     }
 
-    $sql = "select jobTitle, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where jobpostactivity.candidateID = $candidateID";
+    $sql = "select jobTitle, companyName, appliedDate, companyStatus, candidateStatus  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID INNER JOIN companyaccount on postingposition.companyID = companyaccount.id where jobpostactivity.candidateID = $candidateID";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         $array_result = $result->fetch_all(MYSQLI_ASSOC); 

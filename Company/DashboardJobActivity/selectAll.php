@@ -19,7 +19,7 @@ function SelectAll(){
     }
     
     // $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv  from jobpostactivity INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID where postingposition.ID = $jobID";
-    $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, cv, candidate.firstname, candidate.lastname  from jobpostactivity 
+    $sql = "select jobpostactivity.id, postingID, jobTitle, candidateID, appliedDate, companyStatus, candidateStatus, candidate.firstname, candidate.lastname  from jobpostactivity 
         INNER JOIN postingposition on jobpostactivity.postingID = postingposition.ID 
         INNER JOIN candidate on jobpostactivity.candidateID = candidate.user_id
         where companyID = $companyID 

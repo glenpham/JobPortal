@@ -134,7 +134,7 @@ function UpdateData($url_value){
 </head>
 <body>
 
-    <?php include '../navbarEmployer.php' ; ?>
+    <?php include '../../navbar.php' ; ?>
 
     <div class="container">
             <p><span class="error-msg">* required field</span></p>
