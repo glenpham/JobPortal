@@ -37,6 +37,8 @@ $array_result = SelectAll();
                 <th scope="col">Address</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
+                <th scope="col">Education</th>
+                <th scope="col">Experience</th>
                 <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -61,6 +63,8 @@ $array_result = SelectAll();
                         $address = $row['address'];
                         $mobile = $row['mobile'];
                         $email = $row['email'];
+                        $education = $row['education'];
+                        $experience = $row['experience'];
                         echo '<tr>
 
                             <td> ' .$firstName. ' </td>
@@ -68,11 +72,10 @@ $array_result = SelectAll();
                             <td> ' .$address. ' </td>
                             <td> ' .$mobile. ' </td>
                             <td> ' .$email. ' </td>
+                            <td> ' .$education. ' </td>
+                            <td> ' .$experience. ' </td>
                             <td>
                                 <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Update</a></button>
-                                <button class="btn btn-secondary"><a href="#" class="text-light">Add Experience</a></button>
-                                <button class="btn btn-secondary"><a href="#" class="text-light">Add Education</a></button>
-                        
                             </td>
                         </tr>';
                     }

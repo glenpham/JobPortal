@@ -4,7 +4,7 @@
     // If the submitted form isn't empty in any way and holds data,
     //  assign them to the decalred variables
     session_start();
-    $firstName = $lastName = $address = $mobile = $email = $password = $success = "";
+    $firstName = $lastName = $address = $mobile = $email = $education = $experience = $password = $success = "";
     
     if(!empty($_POST)){
         if($_POST['firstName'] !='' ){
@@ -21,6 +21,12 @@
         }
         if($_POST['email'] !='' ){
             $email = $_POST['email'];
+        }
+        if($_POST['education'] !='' ){
+            $education = $_POST['education'];
+        }
+        if($_POST['experience'] !='' ){
+            $experience = $_POST['experience'];
         }
         if($_POST['password'] !='' ){
             $age = $_POST['password'];
@@ -39,7 +45,7 @@
     function formValidation(){
         // Declare & set variables to empty
         $error_log['firstName'] = $error_log['lastName'] = $error_log['address']= '';
-        $error_log['mobile'] = $error_log['email'] = $error_log['password'] = $error_log['success'] = '';
+        $error_log['mobile'] = $error_log['email'] = $error_log['education'] = $error_log['experience'] = $error_log['password'] = $error_log['success'] = '';
 
         if(isset($_POST) && !empty($_POST)  ){
             if($_POST['firstName'] == ''){
@@ -57,10 +63,16 @@
             if($_POST['email'] == ''){
                 $error_log['email'] = 'Please enter your Email';
             }
+            if($_POST['education'] == ''){
+                $error_log['education'] = 'Please enter your Education';
+            }
+            if($_POST['experience'] == ''){
+                $error_log['experience'] = 'Please enter your Experience';
+            }
             if($_POST['password'] == ''){
                 $error_log['password'] = 'Please enter your Password';
             }
-            if($_POST['firstName']!='' && $_POST['lastName']!='' && $_POST['address']!='' && $_POST['mobile'] !='' && $_POST['email']!='' && $_POST['password']!=''){
+            if($_POST['firstName']!='' && $_POST['lastName']!='' && $_POST['address']!='' && $_POST['mobile'] !='' && $_POST['email']!='' && $_POST['education']!='' && $_POST['experience']!='' && $_POST['password']!=''){
                 $error_log['success'] = '<p class="success">Signup Successful!</p>';
             }
         }
@@ -73,7 +85,9 @@
         $lastName = '';
         $address='';
         $mobile = '';
-        $email = '';    
+        $email = '';
+        $education = '';   
+        $experience = '';       
         $password = '';
     }
 
@@ -85,9 +99,9 @@
             die("Failed! ". $conn->connect_error);
         }
 
-        $sql = "INSERT INTO candidate (firstname, lastname, address, mobile, email, password) 
+        $sql = "INSERT INTO candidate (firstname, lastname, address, mobile, email, education, experience, password) 
                 Values('$_POST[firstName]','$_POST[lastName]','$_POST[address]','$_POST[mobile]',
-                '$_POST[email]','$_POST[password]')";
+                '$_POST[email]','$_POST[education]','$_POST[experience]','$_POST[password]')";
 
         //  echo $sql;
         // exit;
@@ -143,6 +157,14 @@
                     <label class="label" for="email">Email</label>
                     <input type="email" class ="input-div-nn" id="email" name="email" value = "<?php echo $email; ?>">
                     <p class = "error-msg"><?php echo $error_log['email'];?></p>
+
+                    <label class="label" for="education">Education</label>
+                    <input type="test" class ="input-div-nn" id="education" name="education" value = "<?php echo $education; ?>">
+                    <p class = "error-msg"><?php echo $error_log['education'];?></p>
+
+                    <label class="label" for="experience">Experience</label>
+                    <input type="test" class ="input-div-nn" id="experience" name="experience" value = "<?php echo $experience; ?>">
+                    <p class = "error-msg"><?php echo $error_log['experience'];?></p>
 
                     <label class="label" for="mobile">Password</label>
                     <input type="password" class ="input-div-nn" id="password" name = "password"  value = "<?php echo $password; ?>">
