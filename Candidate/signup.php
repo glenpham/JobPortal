@@ -116,7 +116,7 @@
     </head>
     <body>
 
-        <?php include_once '../navbar.php'; ?>
+    <?php include '../navbar.php' ; ?>
 
         <div class="container">
                 <h1 style="text-align: center;">Job Seeker</h1>

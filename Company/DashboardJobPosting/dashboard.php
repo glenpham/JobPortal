@@ -1,6 +1,5 @@
 <?php
 require 'selectAll.php';
-$_SESSION['navbar'] = 'employer';
 $array_result = SelectAll();
 ?>
 

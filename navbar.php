@@ -1,41 +1,43 @@
 <?php 
-
-  //echo print_r($_SESSION);
-
+  if(!isset($_SESSION['navbar'])){ 
 ?>
-
-<?php 
-  if($_SESSION['navbar'] == 'home'){ 
-?>
-    <div class="navbar">
-      <a class="active">JOB PORTAL</a>
-      <a href="../index.php">Find jobs</a>
-      <a href="../Candidate/signup.php" class="right">Candidate Sign up</a>
-      <a href="../Company/register.php" class="right">Employer Sign up</a>
-    </div>
+  <div class="navbar">
+    <a class="active">JOB PORTAL</a>
+    <a href="/JobPortal">Find jobs</a>
+    <a href="/JobPortal/Candidate/signup.php" class="right">Candidate Sign up</a>
+    <a href="/JobPortal/Company/register.php" class="right">Employer Sign up</a>
+  </div>
 <?php  
   }
   elseif($_SESSION['navbar'] == 'candidate'){ 
 ?>
-    <div class="navbar">
-      <a class="active">JOB PORTAL</a>
-      <a href="/JobPortal">Find jobs</a>
-      <a href="userDashboard.php" class="right">My Account</a>
-      <a href="/JobPortal/logout.php" class="right">Logout</a>
-    </div>
+  <div class="login">
+    Welcome <?php echo $_SESSION['email'];?>
+  </div>
+
+  <div class="navbar">
+    <a class="active">JOB PORTAL</a>
+    <a href="/JobPortal">Find jobs</a>
+    <a href="/JobPortal/Candidate/userDashboard.php" class="right">My Account</a>
+    <a href="/JobPortal/logout.php" class="right">Logout</a>
+  </div>
 <?php  
   }
   elseif($_SESSION['navbar'] == 'employer'){ 
 ?>
-    <div class="navbar">
-      <a class="active">JOB PORTAL</a>
-      <a href="/JobPortal/Company/postingPosition.php">Job Posting</a>
-      <a href="/JobPortal/Company/DashboardJobPosting/dashboard.php">View Jobs Posted</a>
-      <a href="/JobPortal/Company/DashboardJobActivity/jobActivity.php">View Job Activity</a>
-      <a href="/JobPortal/logout.php" class="right">Logout</a>
-    </div>
+
+  <div class="login">
+    Welcome <?php echo $_SESSION['email'];?>
+  </div>
+
+  <div class="navbar">
+    <a class="active">JOB PORTAL</a>
+    <a href="/JobPortal/">HOME</a>
+    <a href="/JobPortal/Company/postingPosition.php">Job Posting</a>
+    <a href="/JobPortal/Company/DashboardJobPosting/dashboard.php">View Jobs Posted</a>
+    <a href="/JobPortal/Company/DashboardJobActivity/jobActivity.php">View Job Activity</a>
+    <a href="/JobPortal/logout.php" class="right">Logout</a>
+  </div>
 <?php  
   }
 ?>
-
-

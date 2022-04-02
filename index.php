@@ -1,12 +1,5 @@
 <?php
 session_start();
-// unset($_SESSION['companyID']);
-// unset($_SESSION['candidateID']);
-// unset($_SESSION['email']);
-$_SESSION['navbar'] = 'home';
-// $_SESSION['companyID'] = NULL;
-// $_SESSION['candidateID'] = NULL;
-// $_SESSION['email'] = NULL;
 echo print_r($_SESSION,true);
 $email = $password = '';
 $inputErr = '';
@@ -60,6 +53,8 @@ function loginAccount(){
 
       if($_POST['password'] == $decryption){
         $_SESSION["companyID"] = $row['id'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['navbar'] = 'employer';
         header("Location:Company/DashboardJobPosting/dashboard.php");
         die();
       }
@@ -75,6 +70,7 @@ function loginAccount(){
       if($_POST['password'] == $decryption){
         $_SESSION["candidateID"] = $row['user_id'];
         $_SESSION["email"] = $row['email'];
+        $_SESSION['navbar'] = 'candidate';
         header("Location:Candidate/userDashboard.php");
         die();
       }
@@ -125,22 +121,21 @@ function SelectAvailableJob(){
   <body>
 
     <div class="login">
-      <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <div class="messageErr"><?php echo $inputErr;?></div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value = "<?php echo $email; ?>">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" value = "<?php echo $password; ?>">
-        <button type="submit">Submit</button>
-      </form>
+      <?php if (!isset($_SESSION['email'])){ ?> 
+      
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+          <div class="messageErr"><?php echo $inputErr;?></div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value = "<?php echo $email; ?>">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" value = "<?php echo $password; ?>">
+          <button type="submit">Submit</button>
+        </form>
+        
+    <?php ;} ?>
     </div>
 
-    <div class="navbar">
-      <a class="active">JOB PORTAL</a>
-      <a href='#'>Find jobs</a>
-      <a href="Candidate/signup.php" class="right">Candidate Sign up</a>
-      <a href="Company/register.php" class="right">Employer Sign up</a>
-    </div>
+    <?php include 'navbar.php' ; ?>
 
     <div class="slideshow-container">
       <div class="mySlides">

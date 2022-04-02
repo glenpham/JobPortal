@@ -91,7 +91,7 @@ function test_input($data) {
 </head>
 <body>
 
-    <?php include_once '../navbar.php'; ?>
+    <?php include '../navbar.php' ; ?>
 
     <div class="container">
         <h1>Post Job</h1>

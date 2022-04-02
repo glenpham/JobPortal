@@ -4,7 +4,6 @@ session_start();
 $email = $password = $companyName = $description = $website = $address = $city = $province = $country ='';
 $emailErr = $passwordErr = $companyNameErr = $descriptionErr = $websiteErr = $addressErr = $cityErr = $provinceErr = $countryErr ='';
 $is_error = false;
-$_SESSION['navbar'] = 'home';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
@@ -146,7 +145,7 @@ function test_input($data) {
 </head>
 <body>
 
-    <?php include_once '../navbar.php'; ?>
+    <?php include '../navbar.php' ; ?>
 
     <div class="container">
       <h1>Sign-up as an Employer</h1>

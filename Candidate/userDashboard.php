@@ -3,7 +3,6 @@
 session_start();
 print_r($_SESSION);
 $candidateID = $_SESSION['candidateID'];
-$_SESSION['navbar'] = 'candidate';
 require 'selectAll.php';
 $array_result = SelectAll();
 
@@ -28,7 +27,7 @@ $array_result = SelectAll();
 
     <!---- Body Start ---->
     <body>
-        <?php include '../navbar.php'; ?>
+    <?php include '../navbar.php' ; ?>
 
         <table class="table" style="text-align: center;">
             <thead>
