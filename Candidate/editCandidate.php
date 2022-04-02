@@ -95,11 +95,10 @@ function UpdateData($url_value){
     $sql = "update candidate set 
         firstname ='$_POST[firstName]', lastname='$_POST[lastName]', address='$_POST[address]',
         mobile = '$_POST[mobile]', education = '$_POST[education]', experience = '$_POST[experience]'
-        where id=$url_value[4]";
+        where user_id=$url_value[4]";
 
     if($conn->query($sql)=== true){
-        $message='Job post updated!';
-        echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+        echo "<script>alert('CV updated!');document.location='../userDashboard.php'</script>";
     }
     else{
         echo "error".$conn->connect_error;
