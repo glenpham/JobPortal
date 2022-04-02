@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo print_r($_SESSION,true);
+// echo print_r($_SESSION,true);
 $email = $password = '';
 $inputErr = '';
 $is_error = false;

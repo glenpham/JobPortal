@@ -29,7 +29,7 @@ foreach($array_result as $value){?>
  <td><?php echo $value['createdDate'];?></td>
  <td><?php if (!isset($_SESSION['candidateID'])){ ?> <a href="Candidate/signup.php">Apply</a> <?php ;} 
  
- elseif ($value['status'] == 'active' && $_SESSION['candidateID'] != ''){ ?><a href="apply.php?jobID=<?php echo $value['id'];?>">Apply</a><?php }?></td>
+ elseif ($value['status'] == 'active' && $_SESSION['candidateID'] != ''){ ?><a href="/JobPortal/Candidate/apply.php?jobID=<?php echo $value['id'];?>">Apply</a><?php }?></td>
 </tr>
 
 <?php } 

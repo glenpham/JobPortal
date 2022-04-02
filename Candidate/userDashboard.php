@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 $candidateID = $_SESSION['candidateID'];
 require 'selectAll.php';
 $array_result = SelectAll();
