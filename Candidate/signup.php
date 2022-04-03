@@ -73,14 +73,20 @@
                 $error_log['password'] = 'Please enter your Password';
             }
             if($_POST['firstName']!='' && $_POST['lastName']!='' && $_POST['address']!='' && $_POST['mobile'] !='' && $_POST['email']!='' && $_POST['education']!='' && $_POST['experience']!='' && $_POST['password']!=''){
-                $error_log['success'] = '<p class="success">Signup Successful!</p>';
+                //$error_log['success'] = '<p class="success">Signup Successful!</p>';
+                if( insertValue() == true){
+                    $error_log['success'] = '<p class="success">Signup Successful!</p>';
+                }
+                else{
+                    $error_log['success'] = '<p class="messageErr">Email alreay in use. Please fill form again.</p>';
+                }
             }
         }
         return $error_log;
     }
 
+    
     if(isset($error_log['success']) && !empty($error_log['success'])){
-        insertValue();
         $firstName = '';
         $lastName = '';
         $address='';
@@ -90,10 +96,12 @@
         $experience = '';       
         $password = '';
     }
+    
 
     function insertValue(){
         include '../database.php';
         //print_r($_POST);
+        echo "Inside insertValue";
 
         if($conn ->connect_error){
             die("Failed! ". $conn->connect_error);
@@ -102,7 +110,9 @@
         $isEmailAvailable = "select * from candidate where email = '$_POST[email]'";    
         $result = $conn->query($isEmailAvailable);
         if($result->num_rows > 0){
-            $error_log['success'] = '<p class="danger">Email alreay in use</p>';
+            echo "Inside sql function";
+            return false;
+            //$error_log['success'] = '<p class="danger">Email alreay in use</p>';
         }
         else{
             $sql = "INSERT INTO candidate (firstname, lastname, address, mobile, email, education, experience, password) 
@@ -118,6 +128,8 @@
             $conn->query($sql);
 
             include 'encrypt.php';
+
+            return true;
         }
 
         $conn->close();

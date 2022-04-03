@@ -11,11 +11,11 @@
 
     $result = $conn->query($sqlVerify);
     if($result->num_rows > 0){
-        echo "<script>alert('Already Applied');document.location='jobs.php'</script>";
+        echo "<script>alert('You have already applied to this job');document.location='jobs.php'</script>";
     }
     else{
         $conn->query($sqlInsert);
-        //echo "<script>alert('Application Successful');document.location='jobs.php'</script>";
+        echo "<script>alert('Application Successful');document.location='jobs.php'</script>";
     }
     $conn->close();
 ?>

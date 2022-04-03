@@ -69,6 +69,10 @@
     color: red;
   }
 
+  .success {
+    color: green;
+  }
+
 .slideshow-container {
   width: 100%;
   position: relative;
