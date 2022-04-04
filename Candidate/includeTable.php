@@ -16,7 +16,6 @@ foreach($array_result as $value){?>
  <td><?php echo $value['appliedDate'];?></td>
  <td><?php echo $value['companyStatus'];?></td>
  <td><?php echo $value['candidateStatus'];?></td>
- <td><a class="accept-nn" href="#">View Details</a></td>
 </tr>
 
 <?php } 
