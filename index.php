@@ -121,6 +121,7 @@ function SelectAvailableJob(){
   <body>
 
     <div class="login">
+      
       <?php if (!isset($_SESSION['email'])){ ?> 
       
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">

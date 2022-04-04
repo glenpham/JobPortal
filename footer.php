@@ -2,6 +2,7 @@
       <ul class="no-bullets">
         <li><b>Job Portal</b></li>
         <li><a href="/JobPortal">Home</a></li>
+        <li><a href="/JobPortal/aboutus.php">About Us</a></li>
       </ul>
       <ul class="no-bullets">
         <li><b>Candidate</b></li>
